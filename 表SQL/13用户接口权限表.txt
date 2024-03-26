@@ -1,0 +1,34 @@
+alter table T_USERANDINTER
+   drop constraint FK_T_USERAN_REFERENCE_T_INTERC;
+
+alter table T_USERANDINTER
+   drop constraint FK_T_USERAN_REFERENCE_T_USERIN;
+
+drop table T_USERANDINTER cascade constraints;
+
+/*==============================================================*/
+/* Table: T_USERANDINTER                                        */
+/*==============================================================*/
+create table T_USERANDINTER 
+(
+   username           varchar2(30)         not null,
+   intername          varchar2(30)         not null,
+   constraint PK_T_USERANDINTER primary key (username, intername)
+);
+
+comment on table T_USERANDINTER is
+'本表存放了每个用户访问接口的权限';
+
+comment on column T_USERANDINTER.username is
+'用户名';
+
+comment on column T_USERANDINTER.intername is
+'接口名';
+
+alter table T_USERANDINTER
+   add constraint FK_T_USERAN_REFERENCE_T_INTERC foreign key (intername)
+      references T_INTERCFG (intername);
+
+alter table T_USERANDINTER
+   add constraint FK_T_USERAN_REFERENCE_T_USERIN foreign key (username)
+      references T_USERINFO (username);

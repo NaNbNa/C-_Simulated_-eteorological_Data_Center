@@ -1,0 +1,260 @@
+.
+├── idc
+│   ├── bin
+│   │   ├── crtsurfdata
+│   │   ├── obtcodetodb
+│   │   ├── obtmindtodb
+│   │   └── obtmindtodb2
+│   ├── cpp
+│   │   ├── crtsurfdata
+│   │   ├── crtsurfdata.cpp
+│   │   ├── idcapp.cpp
+│   │   ├── idcapp.h
+│   │   ├── makefile
+│   │   ├── obtcodetodb
+│   │   ├── obtcodetodb.cpp
+│   │   ├── obtmindtodb
+│   │   ├── obtmindtodb2
+│   │   ├── obtmindtodb2.cpp
+│   │   ├── obtmindtodb.cpp
+│   │   ├── start.sh
+│   │   └── stop.sh
+│   ├── ini
+│   │   ├── stcode.ini
+│   │   └── xmltodb.xml
+│   └── sql
+│       └── deletetable.sql
+├── public
+│   ├── _cmpublic.h
+│   ├── db
+│   │   ├── oracle
+│   │   │   ├── blobtofile
+│   │   │   ├── blobtofile.cpp
+│   │   │   ├── clobtofile
+│   │   │   ├── clobtofile.cpp
+│   │   │   ├── createtable
+│   │   │   ├── createtable.cpp
+│   │   │   ├── deletetable
+│   │   │   ├── deletetable.cpp
+│   │   │   ├── demo1
+│   │   │   ├── demo1.cpp
+│   │   │   ├── demo2
+│   │   │   ├── demo2.cpp
+│   │   │   ├── demo3
+│   │   │   ├── demo3.cpp
+│   │   │   ├── demo4
+│   │   │   ├── demo4.cpp
+│   │   │   ├── demo5
+│   │   │   ├── demo5.cpp
+│   │   │   ├── filetoblob
+│   │   │   ├── filetoblob.cpp
+│   │   │   ├── filetoclob
+│   │   │   ├── filetoclob.cpp
+│   │   │   ├── inserttable
+│   │   │   ├── inserttable.cpp
+│   │   │   ├── makefile
+│   │   │   ├── memo_in.txt
+│   │   │   ├── memo_out.txt
+│   │   │   ├── _ooci.cpp
+│   │   │   ├── _ooci.h
+│   │   │   ├── pic_in.jpeg
+│   │   │   ├── pic_out.jpeg
+│   │   │   ├── selecttable
+│   │   │   ├── selecttable.cpp
+│   │   │   ├── updatetable
+│   │   │   └── updatetable.cpp
+│   │   └── tmp
+│   ├── demo
+│   │   ├── demo1
+│   │   ├── demo10
+│   │   ├── demo10.cpp
+│   │   ├── demo12
+│   │   ├── demo12.cpp
+│   │   ├── demo14
+│   │   ├── demo14.cpp
+│   │   ├── demo16
+│   │   ├── demo16.cpp
+│   │   ├── demo18
+│   │   ├── demo18.cpp
+│   │   ├── demo1.cpp
+│   │   ├── demo2
+│   │   ├── demo20
+│   │   ├── demo20.cpp
+│   │   ├── demo22
+│   │   ├── demo22.cpp
+│   │   ├── demo23
+│   │   ├── demo23.cpp
+│   │   ├── demo24
+│   │   ├── demo24.cpp
+│   │   ├── demo26
+│   │   ├── demo26.cpp
+│   │   ├── demo28
+│   │   ├── demo28.cpp
+│   │   ├── demo29
+│   │   ├── demo29.cpp
+│   │   ├── demo2.cpp
+│   │   ├── demo30
+│   │   ├── demo30.cpp
+│   │   ├── demo32
+│   │   ├── demo32.cpp
+│   │   ├── demo34
+│   │   ├── demo34.cpp
+│   │   ├── demo36
+│   │   ├── demo36.cpp
+│   │   ├── demo37
+│   │   ├── demo37.cpp
+│   │   ├── demo38
+│   │   ├── demo38.cpp
+│   │   ├── demo39
+│   │   ├── demo39.cpp
+│   │   ├── demo42
+│   │   ├── demo42.cpp
+│   │   ├── demo44
+│   │   ├── demo44.cpp
+│   │   ├── demo45
+│   │   ├── demo45.cpp
+│   │   ├── demo46
+│   │   ├── demo46.cpp
+│   │   ├── demo47
+│   │   ├── demo47.cpp
+│   │   ├── demo48.cpp
+│   │   ├── demo50
+│   │   ├── demo50.cpp
+│   │   ├── demo51
+│   │   ├── demo51.cpp
+│   │   ├── demo52
+│   │   ├── demo52.cpp
+│   │   └── makefile
+│   ├── _ftp.cpp
+│   ├── _ftp.h
+│   ├── ftplib.c
+│   ├── ftplib.h
+│   ├── libftp.a
+│   ├── libftp.so
+│   ├── lib_public.a
+│   ├── makefile
+│   ├── _public.cpp
+│   ├── _public.h
+│   └── socket
+│       ├── client
+│       ├── client1
+│       ├── client1.cpp
+│       ├── client2
+│       ├── client2.cpp
+│       ├── client3
+│       ├── client3.cpp
+│       ├── client4
+│       ├── client4.cpp
+│       ├── client.cpp
+│       ├── makefile
+│       ├── tcpepoll
+│       ├── tcpepoll1
+│       ├── tcpepoll1.cpp
+│       ├── tcpepoll2
+│       ├── tcpepoll2.cpp
+│       ├── tcpepoll.cpp
+│       ├── tcppoll
+│       ├── tcppoll.cpp
+│       ├── tcpselect
+│       ├── tcpselect.cpp
+│       ├── tmp2.sh
+│       └── tmp.sh
+├── tmp
+│   └── demo24.cpp
+└── tools
+    ├── bin
+    │   ├── checkproc
+    │   ├── deletefiles
+    │   ├── deletetable
+    │   ├── dminingoracle
+    │   ├── fileserver
+    │   ├── ftpgetfiles
+    │   ├── ftpputfiles
+    │   ├── gzipfiles
+    │   ├── inetd
+    │   ├── migratetable
+    │   ├── procctl
+    │   ├── rinetd
+    │   ├── rinetdin
+    │   ├── syncinc
+    │   ├── syncref
+    │   ├── tcpgetfiles
+    │   ├── tcpputfiles
+    │   ├── webserver
+    │   └── xmltodb
+    ├── cpp
+    │   ├── checkproc
+    │   ├── checkproc.cpp
+    │   ├── deletefiles
+    │   ├── deletefiles.cpp
+    │   ├── deletetable
+    │   ├── deletetable.cpp
+    │   ├── demo
+    │   │   ├── demo02
+    │   │   ├── demo02.cpp
+    │   │   ├── demo03
+    │   │   ├── demo03.cpp
+    │   │   ├── demo04
+    │   │   ├── demo04.cpp
+    │   │   ├── demo05
+    │   │   ├── demo05.cpp
+    │   │   ├── demo06
+    │   │   ├── demo06.cpp
+    │   │   ├── demo07
+    │   │   ├── demo07.cpp
+    │   │   ├── demo08
+    │   │   ├── demo08.cpp
+    │   │   └── makefile
+    │   ├── dminingoracle
+    │   ├── dminingoracle.cpp
+    │   ├── fileserver
+    │   ├── fileserver.cpp
+    │   ├── ftpgetfiles
+    │   ├── ftpgetfiles.cpp
+    │   ├── ftpputfiles
+    │   ├── ftpputfiles.cpp
+    │   ├── gzipfiles
+    │   ├── gzipfiles.cpp
+    │   ├── inetd
+    │   ├── inetd.cpp
+    │   ├── makefile
+    │   ├── migratetable
+    │   ├── migratetable.cpp
+    │   ├── procctl
+    │   ├── procctl.cpp
+    │   ├── rinetd
+    │   ├── rinetd.cpp
+    │   ├── rinetdin
+    │   ├── rinetdin.cpp
+    │   ├── syncinc
+    │   ├── syncinc.cpp
+    │   ├── syncref
+    │   ├── syncref.cpp
+    │   ├── tcpgetfiles
+    │   ├── tcpgetfiles.cpp
+    │   ├── tcpputfiles
+    │   ├── tcpputfiles.cpp
+    │   ├── tools.cpp
+    │   ├── tools.h
+    │   ├── webserver
+    │   ├── webserver.cpp
+    │   ├── xmltodb
+    │   └── xmltodb.cpp
+    └── demo
+        ├── client
+        ├── client2
+        ├── client2.cpp
+        ├── client.cpp
+        ├── index.html
+        ├── index.html.1
+        ├── index.html.2
+        ├── makefile
+        ├── server
+        ├── server1
+        ├── server1.cpp
+        ├── server2
+        ├── server2.cpp
+        ├── server.cpp
+        ├── SURF_ZH_20240325104400_8989.csv
+        ├── SURF_ZH_20240325104400_8989.json
+        └── SURF_ZH_20240325104400_8989.xml

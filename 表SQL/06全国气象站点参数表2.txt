@@ -1,0 +1,55 @@
+drop index IDX_ZHOBTCODE2_1;
+
+drop table T_ZHOBTCODE2 cascade constraints;
+
+/*==============================================================*/
+/* Table: T_ZHOBTCODE2                                          */
+/*==============================================================*/
+drop sequence SEQ_ZHBOTCODE2;
+create sequence SEQ_ZHOBTCODE2 increment by 1 minvalue 1 nocycle;
+create table T_ZHOBTCODE2 
+(
+   stid               char(5)              not null,
+   cityname           varchar2(30)         not null,
+   provnname          varchar2(30)         not null,
+   lat                number(8)            not null,
+   lon                number(8)            not null,
+   height             number(8),
+   uptime             date                 default SYSDATE not null,
+   recid              number(15)           not null,
+   constraint PK_T_ZHOBTCODE2 primary key (stid)
+         using index tablespace INDEXS
+)
+tablespace DATA;
+
+comment on column T_ZHOBTCODE2.stid is
+'站点代码,固定五个字符';
+
+comment on column T_ZHOBTCODE2.cityname is
+'城市名称';
+
+comment on column T_ZHOBTCODE2.provnname is
+'省名称';
+
+comment on column T_ZHOBTCODE2.lat is
+'纬度，单位：0.01度';
+
+comment on column T_ZHOBTCODE2.lon is
+'经度，单位：0.01度';
+
+comment on column T_ZHOBTCODE2.height is
+'海拔高度，单位：0.1米';
+
+comment on column T_ZHOBTCODE2.uptime is
+'更新时间，数据被插入或者更新的时间';
+
+comment on column T_ZHOBTCODE2.recid is
+'记录编号，从本表同名的序列生成器中获取';
+
+/*==============================================================*/
+/* Index: IDX_ZHOBTCODE2_1                                      */
+/*==============================================================*/
+create unique index IDX_ZHOBTCODE2_1 on T_ZHOBTCODE2 (
+   recid ASC
+)
+tablespace INDEXS;

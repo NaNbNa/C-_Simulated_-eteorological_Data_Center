@@ -1,0 +1,68 @@
+alter table T_USERANDINTER
+   drop constraint FK_T_USERAN_REFERENCE_T_USERIN;
+
+alter table T_USERLOG
+   drop constraint FK_T_USERLO_REFERENCE_T_USERIN;
+
+alter table T_USERLOGSTAT
+   drop constraint FK_T_USERLO_REFERENCE_T_USERIN;
+
+drop table T_USERINFO cascade constraints;
+
+/*==============================================================*/
+/* Table: T_USERINFO                                            */
+/*==============================================================*/
+drop sequence SEQ_USERINFO;
+create sequence SEQ_USERINFO increment by 1 minvalue 1 nocycle;
+create table T_USERINFO 
+(
+   username           varchar2(30)         not null,
+   passwd             varchar2(30)         not null,
+   appname            varchar2(50)         not null,
+   ip                 varchar2(50),
+   contacts           varchar2(50),
+   tel                varchar2(50),
+   email              varchar2(50),
+   memo               varchar2(300),
+   rsts               number(1)            default 1 not null,
+   uptime             date                 default SYSDATE not null,
+   recid              number(15)           not null,
+   constraint PK_T_USERINFO primary key (username),
+   constraint AK_USERINFO_KEYID_T_USERIN unique (recid)
+);
+
+comment on table T_USERINFO is
+'存放了用户的基本信息';
+
+comment on column T_USERINFO.username is
+'用户名';
+
+comment on column T_USERINFO.passwd is
+'密码';
+
+comment on column T_USERINFO.appname is
+'应用名称';
+
+comment on column T_USERINFO.ip is
+'绑定ip，多个ip之间用逗号分隔';
+
+comment on column T_USERINFO.contacts is
+'联系电话';
+
+comment on column T_USERINFO.tel is
+'联系人';
+
+comment on column T_USERINFO.email is
+'联系邮箱';
+
+comment on column T_USERINFO.memo is
+'备注';
+
+comment on column T_USERINFO.rsts is
+'记录状态，1--启用，2--禁用';
+
+comment on column T_USERINFO.uptime is
+'更新时间';
+
+comment on column T_USERINFO.recid is
+'记录编号,从与本表同名的序列生成器中获取';

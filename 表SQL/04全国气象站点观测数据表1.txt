@@ -1,0 +1,90 @@
+drop index IDX_ZHOBTMIND1_3;
+
+drop index IDX_ZHOBTMIND1_2;
+
+drop index IDX_ZHOBTMIND1_1;
+
+drop table T_ZHOBTMIND1 cascade constraints;
+
+/*==============================================================*/
+/* Table: T_ZHOBTMIND1                                          */
+/*==============================================================*/
+drop sequence SEQ_ZHOBTMIND1;
+create sequence SEQ_ZHOBTMIND1 increment by 1 minvalue 1 nocycle;
+create table T_ZHOBTMIND1 
+(
+   OBTID                char(5)              not null,
+   DDATETIME            date                 not null,
+   T                    number(8),
+   P                    number(8),
+   U                    number(8),
+   wd                 number(8),
+   WF                   number(8),
+   R                    number(8),
+   VIS                  number(8),
+   UPTIME               date                 default SYSDATE not null,
+   KEYID                number(15)           not null,
+   constraint PK_T_ZHOBTMIND1 primary key (OBTID, DDATETIME)
+         using index tablespace INDEXS
+)
+tablespace DATA;
+
+comment on table T_ZHOBTMIND1 is
+'存储了全国的气象观测数据，839站点，每个站点一分钟产生一条观测数据';
+
+comment on column T_ZHOBTMIND1.OBTID is
+'站点代码';
+
+comment on column T_ZHOBTMIND1.DDATETIME is
+'数据时间，精确到分钟';
+
+comment on column T_ZHOBTMIND1.T is
+'温度，单位：0.1摄氏度';
+
+comment on column T_ZHOBTMIND1.P is
+'气压，单位：0.1百帕';
+
+comment on column T_ZHOBTMIND1.U is
+'相对湿度，0-100之间的值';
+
+comment on column T_ZHOBTMIND1.wd is
+'风向，0-360之间的值';
+
+comment on column T_ZHOBTMIND1.WF is
+'风速，单位0.1m/s';
+
+comment on column T_ZHOBTMIND1.R is
+'降雨量，0.1mm';
+
+comment on column T_ZHOBTMIND1.VIS is
+'常见度，0.1米';
+
+comment on column T_ZHOBTMIND1.UPTIME is
+'更新时间';
+
+comment on column T_ZHOBTMIND1.KEYID is
+'记录编号，从本表同名的序列生成器中获取';
+
+/*==============================================================*/
+/* Index: IDX_ZHOBTMIND1_1                                      */
+/*==============================================================*/
+create unique index IDX_ZHOBTMIND1_1 on T_ZHOBTMIND1 (
+   KEYID ASC
+)
+tablespace INDEXS;
+
+/*==============================================================*/
+/* Index: IDX_ZHOBTMIND1_2                                      */
+/*==============================================================*/
+create index IDX_ZHOBTMIND1_2 on T_ZHOBTMIND1 (
+   DDATETIME ASC
+)
+tablespace INDEXS;
+
+/*==============================================================*/
+/* Index: IDX_ZHOBTMIND1_3                                      */
+/*==============================================================*/
+create index IDX_ZHOBTMIND1_3 on T_ZHOBTMIND1 (
+   OBTID ASC
+)
+tablespace INDEXS;

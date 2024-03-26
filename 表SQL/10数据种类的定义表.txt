@@ -1,0 +1,57 @@
+alter table T_DATATYPE
+   drop constraint FK_T_DATATY_REFERENCE_T_DATATY;
+
+alter table T_INTERCFG
+   drop constraint FK_T_INTERC_REFERENCE_T_DATATY;
+
+drop table T_DATATYPE cascade constraints;
+
+/*==============================================================*/
+/* Table: T_DATATYPE                                            */
+/*==============================================================*/
+drop sequence SEQ_DATATYPE;
+create sequence SSEQ_DATATYPE increment by 1 minvalue 1 nocycle;
+create table T_DATATYPE 
+(
+   typeid             varchar2(30)         not null,
+   ptypeid            varchar2(30),
+   typename           varchar2(100),
+   orderby            number(5),
+   memo               varchar2(300),
+   rsts               number(1)            default 1 not null,
+   uptime             date                 default SYSDATE not null,
+   keyid              number(15)           not null,
+   constraint PK_T_DATATYPE primary key (typeid),
+   constraint AK_DATATYPE_KEYID_T_DATATY unique (keyid)
+);
+
+comment on table T_DATATYPE is
+'本表存放了全部数据种类的定义。';
+
+comment on column T_DATATYPE.typeid is
+'数据种类编号';
+
+comment on column T_DATATYPE.ptypeid is
+'上级种类编号，如果是一级分类，此处可为空';
+
+comment on column T_DATATYPE.typename is
+'种类名称';
+
+comment on column T_DATATYPE.orderby is
+'显示顺序';
+
+comment on column T_DATATYPE.memo is
+'备注';
+
+comment on column T_DATATYPE.rsts is
+'记录状态，1---启用，2---禁用';
+
+comment on column T_DATATYPE.uptime is
+'更新时间';
+
+comment on column T_DATATYPE.keyid is
+'记录编号,从与本表同名的序列生成器中获取';
+
+alter table T_DATATYPE
+   add constraint FK_T_DATATY_REFERENCE_T_DATATY foreign key (ptypeid)
+      references T_DATATYPE (typeid);

@@ -1,0 +1,14 @@
+linux :centos8
+-------------
+Oracle:11gR2
+-------------
+PD:PowerDesigner
+-------------
+PLSQL Development
+-------------
+VScode
+-------------
+SecureCRT
+-------------
+gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-4)
+g++ (GCC) 8.5.0 20210514 (Red Hat 8.5.0-4)
