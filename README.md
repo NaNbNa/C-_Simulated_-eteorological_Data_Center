@@ -29,5 +29,6 @@
 2. 数据库设计  
 ![image](https://github.com/NaNbNa/C-_Simulated_-eteorological_Data_Center/assets/144761706/9202fa41-6230-494c-8a3e-eec49c8a7d97)
 3. 项目结构  
-![image](https://github.com/NaNbNa/C-_Simulated_-eteorological_Data_Center/assets/144761706/55a24d3d-1566-4137-a0a9-97307770101c)
+![image](https://github.com/NaNbNa/C-_Simulated_-eteorological_Data_Center/assets/144761706/71e0975d-ef86-46ee-9d74-664059a256ad)
+
 
