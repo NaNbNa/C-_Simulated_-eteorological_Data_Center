@@ -21,4 +21,13 @@
 6. 数据接口  
 基于http协议，接受报文url，查询Oracle表中用户信息和权限，分析报文请求信心，返回相关Oracle数据库内的数据  
 7. ftp和tcp文件传输  
-文件传输，二进制方式。  
+文件传输，二进制方式。
+
+#### 项目展示：
+1. 后台服务程序  
+   ![1711850278818](https://github.com/NaNbNa/C-_Simulated_-eteorological_Data_Center/assets/144761706/dd5eceb7-ee7c-4284-9900-164828f9280d)
+2. 数据库设计  
+![image](https://github.com/NaNbNa/C-_Simulated_-eteorological_Data_Center/assets/144761706/9202fa41-6230-494c-8a3e-eec49c8a7d97)
+
+3. 项目结构
+   
